@@ -4,9 +4,8 @@
   "description": "endpoint to generate and store orders",
   "main": "index.js",
   "scripts": {
-    "start": "npm start",
-    "dev": "nodemon ./index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./src/index.js",
+    "dev": "nodemon ./src/index.js"
   },
   "repository": {
     "type": "git",
