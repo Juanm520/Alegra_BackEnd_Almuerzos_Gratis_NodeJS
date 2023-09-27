@@ -18,5 +18,9 @@
     "NodeJS"
   ],
   "author": "Juan M. Rodriguez Lanza",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^7.5.3"
+  }
 }
