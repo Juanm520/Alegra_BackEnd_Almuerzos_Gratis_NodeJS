@@ -1,0 +1,22 @@
+{
+  "name": "ms_4_update_food_storage",
+  "version": "1.0.0",
+  "description": "endpoint to update the food storage, when spend and buy ingredients ",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm start",
+    "dev": "nodemon ./index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "Allegra_BackEnd_Almuerzos_Gratis_NodeJS"
+  },
+  "keywords": [
+    "REST",
+    "API",
+    "NodeJS"
+  ],
+  "author": "Juan M. Rodriguez Lanza",
+  "license": "ISC"
+}
