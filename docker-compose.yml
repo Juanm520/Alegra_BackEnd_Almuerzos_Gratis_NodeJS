@@ -5,7 +5,7 @@ services:
     container_name: mongobd
     build: ./src/server/dbmongo/
     ports:
-      - 20017:27017
+      - 27017:27017
   mysql: 
     container_name: mysql
     build: ./src/server/dbmysql/
@@ -16,20 +16,9 @@ services:
       - MYSQL_DATABASE=$MYSQLDB_DATABASE
     ports:
       - 3306:3306
-  ms_orders:
-    container_name: orders
-    build: ./src/server/ms_1_orders
-    depends_on:
-      - mongo
-    links:
-      - mongo
-    ports:
-      - 3000:3001
-    volumes:
-      - ./src/server/ms_1_orders:.
   ms_menus:
     container_name: menus
-    build: ./src/server/ms_2_menus
+    build: ./src/server/ms_1_menus
     depends_on:
       - mongo
     links:
@@ -37,7 +26,18 @@ services:
     ports:
       - 3000:3002
     volumes:
-      - ./src/server/ms_2_menus:.
+      - ./src/server/ms_1_menus:.
+  ms_orders:
+    container_name: orders
+    build: ./src/server/ms_2_orders
+    depends_on:
+      - mongo
+    links:
+      - mongo
+    ports:
+      - 3000:3001
+    volumes:
+      - ./src/server/ms_2_orders:.
   ms_cook:
     container_name: cook
     build: ./src/server/ms_3_cook
