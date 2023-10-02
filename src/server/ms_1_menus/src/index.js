@@ -1,13 +1,14 @@
-const express = require('express');
-const app = express();
-const port = 3001; // Puerto en el que se ejecutará el servidor
+const express = require('express')
+const app = express()
+const port = 3001
 
-// Ruta para la página de inicio
-app.get('/', (req, res) => {
-  res.send('¡Hola Mundo desde Express.js!');
-});
+//conect Db
+require('./database')
 
-// Iniciar el servidor
+// Requiere Router
+app.use(require('./router'))
+
+// Start server
 app.listen(port, () => {
-  console.log(`Servidor escuchando en http://localhost:${port}`);
+  console.log(`http://localhost:${port}`)
 });

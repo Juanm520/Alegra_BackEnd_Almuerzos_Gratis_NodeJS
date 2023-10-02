@@ -1,11 +1,14 @@
 const express = require('express')
 const app = express()
+const port = 3008
 
-const port = 3000
+//conect Db
+require('./database')
 
-require("./database/db.js")
-app.use(require('./routes/router.js'))
+// Requiere Router
+app.use(require('./router'))
 
+// Start server
 app.listen(port, () => {
-    console.log('http://localhost:3000')
-})
+  console.log(`http://localhost:${port}`)
+});
