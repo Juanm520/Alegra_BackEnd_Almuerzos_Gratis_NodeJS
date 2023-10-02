@@ -24,9 +24,9 @@ services:
     links:
       - mongo
     ports:
-      - 3000:3002
+      - 3000:3001
     volumes:
-      - ./src/server/ms_1_menus:.
+      - E:\Proyectos\Alegra Test\Alegra_BackEnd_Almuerzos_Gratis_NodeJS\src\server\ms_1_menus:/usr/app
   ms_orders:
     container_name: orders
     build: ./src/server/ms_2_orders
@@ -35,9 +35,9 @@ services:
     links:
       - mongo
     ports:
-      - 3000:3001
+      - 3000:3002
     volumes:
-      - ./src/server/ms_2_orders:.
+      - E:\Proyectos\Alegra Test\Alegra_BackEnd_Almuerzos_Gratis_NodeJS\src\server\ms_2_orders:/usr/app
   ms_cook:
     container_name: cook
     build: ./src/server/ms_3_cook
@@ -50,7 +50,7 @@ services:
     ports:
       - 3000:3003
     volumes:
-      - ./src/server/ms_3_cook/src:.
+      - E:\Proyectos\Alegra Test\Alegra_BackEnd_Almuerzos_Gratis_NodeJS\src\server\ms_3_cook:/usr/app
   ms_update_food_storage:
     container_name: food_storage
     build: ./src/server/ms_4_update_food_storage
@@ -61,5 +61,5 @@ services:
     ports:
       - 3000:3004
     volumes:
-      - ./src/server/ms_4_update_food_storage:.
+      - E:\Proyectos\Alegra Test\Alegra_BackEnd_Almuerzos_Gratis_NodeJS\src\server\ms_4_update_food_storage:/usr/app
 
