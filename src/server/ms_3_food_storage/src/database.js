@@ -5,7 +5,7 @@ dotenv.config({path: '../../../.env'})
 
 // connection to database
 const pool = createPool({
-    host: 'localhost',
+    host: 'mysql',
     port: 3306,
     user: 'root',
     password: process.env.MYSQLDB_ROOT_PASSWORD,

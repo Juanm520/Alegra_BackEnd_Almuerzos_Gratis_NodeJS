@@ -52,12 +52,6 @@ services:
   ms_cook:
       container_name: cook
       build: ./src/server/ms_4_cook
-      depends_on:
-        - mysql
-        - mongo
-      links:
-        - mysql
-        - mongo
       ports:
         - 3004:3004
       volumes:
