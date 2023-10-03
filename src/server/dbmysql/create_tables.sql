@@ -1,4 +1,4 @@
--- Active: 1696017609462@@127.0.0.1@3306@food_storage
+-- Active: 1696300807422@@127.0.0.1@3306@food_storage
 CREATE TABLE ingredients_list (
   ingredient VARCHAR(255) NOT NULL,
   quantity INT NOT NULL,

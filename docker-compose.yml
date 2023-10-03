@@ -46,7 +46,7 @@ services:
     links:
       - mysql
     ports:
-      - 3004:3004
+      - 3003:3003
     volumes:
       - ./src/server/ms_3_food_storage:/usr/app
   ms_cook:
@@ -59,6 +59,6 @@ services:
         - mysql
         - mongo
       ports:
-        - 3003:3003
+        - 3004:3004
       volumes:
         - ./src/server/ms_4_cook:/usr/app
