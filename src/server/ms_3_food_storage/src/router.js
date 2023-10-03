@@ -2,6 +2,8 @@ const { Router } = require('express')
 const router = Router()
 const ingredients = require('./models/ingredients')
 const updateIngredient = require('./models/updateIngredients')
+const buyIngredient = require('./models/buyIngredients')
+const getPurchasedHistory = require('./models/purchasedHistory')
 
 
 router.get('/', (req, res) => {
@@ -10,35 +12,49 @@ router.get('/', (req, res) => {
 })
 
 router.get('/ingredients_info', async (req, res) => {
-    const getIngredients = await ingredients()
-    res.send(getIngredients)
+    try{
+        const getIngredients = await ingredients()
+        res.send(getIngredients)
+    }
+    catch(err){
+        res.json(err)
+    }
 })
+
+router.get('/purchased_history', async (req, res) => {
+    try{
+        const getHistory = await getPurchasedHistory()
+        res.send(getHistory)
+    }
+    catch(err){
+        res.json(err)
+    }
+})
+
+router.post('/buy', async (req, res) => {
+    try {
+        const params = req.body
+        const data = await buyIngredient(params)
+        await updateIngredient.times_purchased(params)
+        res.json(data)
+    }
+    catch(err){
+        res.json(err)
+    }
+})
+
 
 router.patch('/ingredient_update', async (req, res) => {
-    const params = req.body
-    const data = await updateIngredient(params)
-    res.json(data)
+    try {
+        const params = req.body
+        const data = await updateIngredient.quantity(params)
+        await updateIngredient.times_purchased(params)
+        res.json(data)
+    }
+    catch(err){
+        res.json(err)
+    }
 })
 
-// router.post('/new_order', async (req, res) => {
-//     try {
-//         const order = await newOrder()
-//         return res.send(order)
-//     }
-//     catch {
-//         res.send('error')
-//     }
-// })
-
-// router.patch('/change_order_status', async (req, res) => {
-//     try {
-//         const data = req.body
-//         const order = await changeOrderStatus(data)
-//         return res.send(order)
-//     }
-//     catch(err){
-//         res.send(err.name === 'Error' ? 'Invalid parameter or doesnt exist the record' : '')
-//     }
-// })
 
 module.exports = router
