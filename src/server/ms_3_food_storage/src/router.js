@@ -1,6 +1,7 @@
 const { Router } = require('express')
 const router = Router()
 const ingredients = require('./models/ingredients')
+const updateIngredient = require('./models/updateIngredients')
 
 
 router.get('/', (req, res) => {
@@ -10,15 +11,14 @@ router.get('/', (req, res) => {
 
 router.get('/ingredients_info', async (req, res) => {
     const getIngredients = await ingredients()
-    console.log(getIngredients)
     res.send(getIngredients)
 })
 
-// router.get('/order/:id', async (req, res) => {
-//     const id = req.params.id
-//     const data = await order(id)
-//     res.json(data)
-// })
+router.patch('/ingredient_update', async (req, res) => {
+    const params = req.body
+    const data = await updateIngredient(params)
+    res.json(data)
+})
 
 // router.post('/new_order', async (req, res) => {
 //     try {

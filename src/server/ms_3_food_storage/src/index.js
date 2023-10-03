@@ -1,14 +1,11 @@
 const express = require('express')
 const app = express()
-const port = 3008
+const port = 3003
 
 //To read json post
 app.use(express.json());
 
 //Requiere Router
-app.get('/', (req, res)=>{
-  res.send('hola bodega')
-})
 app.use(require('./router'))
 
 //Start server

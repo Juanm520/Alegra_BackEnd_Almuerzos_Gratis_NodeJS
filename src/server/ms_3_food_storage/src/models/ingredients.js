@@ -8,7 +8,7 @@ class ingredients_info{
 
 async function getIngredientsInfo(){
     return new Promise((resolve, reject) => {
-        pool.query('SELECT * FROM `ingredients_list`', function(err, rows){
+        pool.query('SELECT * FROM ingredients_list', function(err, rows){
             if(err){
                 return reject(err)
             }
