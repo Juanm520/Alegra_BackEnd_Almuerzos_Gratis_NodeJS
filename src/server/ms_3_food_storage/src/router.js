@@ -2,13 +2,13 @@ const { Router } = require('express')
 const router = Router()
 const ingredients = require('./models/ingredients')
 const updateIngredient = require('./models/updateIngredients')
-const buyIngredient = require('./models/buyIngredients')
+const buyIngredient = require('./controllers/newPurchase')
 const getPurchasedHistory = require('./models/purchasedHistory')
 
 
 router.get('/', (req, res) => {
     res.setHeader('Content-Type','text/plain')
-    res.send('Welcome to Food Storage End Point: /ingredients: Info about ingredients.')
+    res.send('Welcome to Food Storage End Point: /ingredients_info: Info about ingredients. /purchased_history: Info about purchases. /buy: Buy ingredients. /ingredient_update: Update quantity of an Ingredient.')
 })
 
 router.get('/ingredients_info', async (req, res) => {
@@ -35,7 +35,6 @@ router.post('/buy', async (req, res) => {
     try {
         const params = req.body
         const data = await buyIngredient(params)
-        await updateIngredient.times_purchased(params)
         res.json(data)
     }
     catch(err){

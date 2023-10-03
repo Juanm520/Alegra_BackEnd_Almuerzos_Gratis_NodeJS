@@ -6,6 +6,7 @@ async function goToMarket({ ingredient }){
     const json = await data.json()
     
     const quantityBuy = json.quantitySold
+
     return quantityBuy
 }
 
