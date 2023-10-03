@@ -1,14 +1,17 @@
 const express = require('express')
 const app = express()
-const port = 3008
+const port = 3002
 
-//conect Db
+//Connect Db
 require('./database')
 
-// Requiere Router
+//To read json post
+app.use(express.json());
+
+//Requiere Router
 app.use(require('./router'))
 
-// Start server
+//Start server
 app.listen(port, () => {
   console.log(`http://localhost:${port}`)
 });

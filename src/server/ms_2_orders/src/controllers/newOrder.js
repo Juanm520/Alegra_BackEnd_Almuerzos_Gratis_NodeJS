@@ -1,17 +1,22 @@
 const order = require('../models/model.order')
 
-async function newOrder (menuCode, date, status = false){
+async function newOrder(){
  try {
-    const newOrder = new order( {
-        'menu': menuCode,
-        'date': date,
-        'delivered': status
-    } )
-    return await newOrder.save()
+    const Order = new order({
+        menu: randomizerMenu(),
+        date: new Date(),
+        delivered: false
+    })
+    return await Order.save()
  }
- catch {
-    console.log('error')
+ catch (err) {
+    return(err)
  }
+}
+
+function randomizerMenu(){
+   const rulete = Math.random() * 6 + 1
+   return Math.floor(rulete)
 }
 
 module.exports = newOrder

@@ -38,22 +38,9 @@ services:
       - 3002:3002
     volumes:
       - ./src/server/ms_2_orders:/usr/app
-  ms_cook:
-    container_name: cook
-    build: ./src/server/ms_3_cook
-    depends_on:
-      - mysql
-      - mongo
-    links:
-      - mysql
-      - mongo
-    ports:
-      - 3003:3003
-    volumes:
-      - ./src/server/ms_3_cook:/usr/app
   ms_update_food_storage:
     container_name: food_storage
-    build: ./src/server/ms_4_update_food_storage
+    build: ./src/server/ms_3_food_storage
     depends_on:
       - mysql
     links:
@@ -61,5 +48,17 @@ services:
     ports:
       - 3004:3004
     volumes:
-      - ./src/server/ms_4_update_food_storage:/usr/app
-
+      - ./src/server/ms_3_food_storage:/usr/app
+  ms_cook:
+      container_name: cook
+      build: ./src/server/ms_4_cook
+      depends_on:
+        - mysql
+        - mongo
+      links:
+        - mysql
+        - mongo
+      ports:
+        - 3003:3003
+      volumes:
+        - ./src/server/ms_4_cook:/usr/app
