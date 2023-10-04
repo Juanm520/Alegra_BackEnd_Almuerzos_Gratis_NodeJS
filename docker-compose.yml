@@ -41,6 +41,11 @@ services:
   ms_update_food_storage:
     container_name: food_storage
     build: ./src/server/ms_3_food_storage
+    env_file:
+      - ./.env
+    environment:
+      - MYSQL_ROOT_PASSWORD=$MYSQLDB_ROOT_PASSWORD
+      - MYSQL_DATABASE=$MYSQLDB_DATABASE
     depends_on:
       - mysql
     links:
