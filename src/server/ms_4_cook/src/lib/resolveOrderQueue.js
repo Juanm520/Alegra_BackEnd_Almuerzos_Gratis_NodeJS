@@ -15,16 +15,18 @@ async function processQueue(){
         else {
             //Delete the loop
             clearInterval(intervalQueue)
+            processOrdersDelay = undeliveredOrders.length * 3000
             //Resolve each order with processOrder method
             undeliveredOrders.forEach(async order => {
-            await processOrder(order)
-            return console.log(`${order._id} Processed`)
+                await processOrder(order)
+                return console.log(`${order._id} Processed`)
             })
-            processOrdersDelay = undeliveredOrders.length * 3000
+            //Restart the queue loop
+            if (processOrdersDelay !== 0){
+              return setTimeout(processQueue, processOrdersDelay)
+            }
         }
     }, 3000)
-    //Restart the queue loop
-    setTimeout(processQueue, processOrdersDelay)
 }
 
 module.exports = processQueue
