@@ -17,4 +17,20 @@ async function newBuy(ingredient){
     }
 }
 
-module.exports = newBuy
+async function buyIngredientList(ingredientMatrix){
+//Iterate to buy the ingredients
+return ingredientMatrix.map( async ingredient => {
+    try {
+        let buy = await newBuy(ingredient[0])
+        while(buy === 'Not Avalible'){
+            buy = await newBuy(ingredient[0])
+        }
+        return buy
+    } 
+    catch (err) {
+        return err
+    }
+    })
+}
+
+module.exports ={ newBuy, buyIngredientList }
