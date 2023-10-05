@@ -8,9 +8,8 @@ app.use(express.json());
 //Requiere Router
 app.use(require('./router'))
 
-//Resolve loop queue.
-const queueLoop = require('./lib/resolveOrderQueue')
-queueLoop()
+//Resolve order queue.
+
 
 //Start server
 app.listen(port, () => {

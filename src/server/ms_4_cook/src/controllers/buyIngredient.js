@@ -19,18 +19,24 @@ async function newBuy(ingredient){
 
 async function buyIngredientList(ingredientMatrix){
 //Iterate to buy the ingredients
-return ingredientMatrix.map( async ingredient => {
-    try {
-        let buy = await newBuy(ingredient[0])
-        while(buy === 'Not Avalible'){
-            buy = await newBuy(ingredient[0])
+return new Promise((resolve, reject) => {
+    ingredientMatrix.map( async ingredient => {
+        try {
+            let buy = await newBuy(ingredient[0])
+            while(buy === 'Not Avalible'){
+                buy = await newBuy(ingredient[0])
+            }
+            resolve(`Shopping ${JSON.stringify(buy)}`) 
+        } 
+        catch (err) {
+            reject(err)
         }
-        return buy
-    } 
-    catch (err) {
-        return err
-    }
-    })
+        })
+})
+
+
+
+
 }
 
 module.exports ={ newBuy, buyIngredientList }
