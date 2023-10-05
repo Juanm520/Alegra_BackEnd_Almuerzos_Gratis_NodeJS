@@ -54,6 +54,7 @@ async function runQueue(delayInMIllisenconds) {
 
 function stopQueue(){
     clearTimeout(loopDelay)
+    console.log('Kitchen stopped')
 }
 
 module.exports = { runQueue, stopQueue }
