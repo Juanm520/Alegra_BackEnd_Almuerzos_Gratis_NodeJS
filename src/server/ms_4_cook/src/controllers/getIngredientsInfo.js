@@ -1,6 +1,6 @@
 //Get ingredients info.
 async function getIngredientesInfo(){
-    const url = 'http://localhost:3003'
+    const url = 'http://ms_update_food_storage:3003'
     const service = 'ingredients_info'
     const petition = `${url}/${service}`
     const options = {

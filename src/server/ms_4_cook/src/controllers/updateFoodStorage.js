@@ -6,7 +6,7 @@ async function updateFoodStorage(order){
     const ingredientsQuantities = requireIngredients(menuIngredients)
     
     const promises = ingredientsQuantities.map(async matrix => {
-        const url = 'http://localhost:3003'
+        const url = 'http://ms_update_food_storage:3003'
         const service = 'ingredient_update'
         const petition = `${url}/${service}`
         const body = { ingredient: matrix[0], quantity: -matrix[1] }

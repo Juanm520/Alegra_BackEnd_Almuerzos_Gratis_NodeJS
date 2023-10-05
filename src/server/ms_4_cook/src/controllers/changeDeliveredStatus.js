@@ -1,5 +1,5 @@
 async function changeDeliveredStatus(order){
-    const url = 'http://localhost:3002'
+    const url = 'http://ms_orders:3002'
     const service = 'change_order_status'
     const petition = `${url}/${service}`
     const options = {

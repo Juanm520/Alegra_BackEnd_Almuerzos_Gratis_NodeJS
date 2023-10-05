@@ -2,7 +2,7 @@ FROM mysql
 
 VOLUME ["/var/lib/mysql"]
 
-COPY . /home/
+COPY ./create_tables.sql /home/
 
 WORKDIR /home/
 

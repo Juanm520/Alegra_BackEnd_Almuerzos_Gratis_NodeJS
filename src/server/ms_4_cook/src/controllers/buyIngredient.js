@@ -1,5 +1,5 @@
 async function newBuy(ingredient){
-    const url = 'http://localhost:3003'
+    const url = 'http://ms_update_food_storage:3003'
     const service = 'buy'
     const petition = `${url}/${service}`
     const body = { ingredient: ingredient }

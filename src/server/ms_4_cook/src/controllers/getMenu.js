@@ -1,6 +1,6 @@
 //Get menu object.
 async function getMenu(menu){
-    const url = 'http://localhost:3001'
+    const url = 'http://ms_menus:3001'
     const service = 'menu'
     const petition = `${url}/${service}/${menu}`
     const options = {

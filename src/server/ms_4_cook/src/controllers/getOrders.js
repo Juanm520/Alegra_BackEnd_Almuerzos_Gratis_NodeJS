@@ -1,6 +1,6 @@
 //Get the list of the orders.
 async function getOrders(){
-    const url = 'http://localhost:3002'
+    const url = 'http://ms_orders:3002'
     const service = 'orders'
     const petition = `${url}/${service}`
     const options = {
@@ -18,7 +18,7 @@ async function getOrders(){
 
 //Get the list of the active orders (no delivered)
 async function activeOrders(){
-    const orders = await getOrders()
+    const orders = await getOrders().catch(err => console.log(err))
     const activeOrders = orders.filter(order => !order.delivered )
     return activeOrders
 }

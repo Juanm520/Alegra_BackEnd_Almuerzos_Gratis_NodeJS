@@ -57,6 +57,14 @@ services:
   ms_cook:
       container_name: cook
       build: ./src/server/ms_4_cook
+      depends_on:
+      - ms_menus
+      - ms_orders
+      - ms_update_food_storage
+      links:
+      - ms_menus
+      - ms_orders
+      - ms_update_food_storage
       ports:
         - 3004:3004
       volumes:

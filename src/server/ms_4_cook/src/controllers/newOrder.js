@@ -1,5 +1,5 @@
 async function newOrder(){
-    const url = 'http://localhost:3002'
+    const url = 'http://ms_orders:3002'
     const service = 'new_order'
     const petition = `${url}/${service}`
     const options = {
