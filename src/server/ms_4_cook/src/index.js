@@ -8,9 +8,6 @@ app.use(express.json());
 //Requiere Router
 app.use(require('./router'))
 
-//Resolve order queue.
-
-
 //Start server
 app.listen(port, () => {
   console.log(`http://localhost:${port}`)

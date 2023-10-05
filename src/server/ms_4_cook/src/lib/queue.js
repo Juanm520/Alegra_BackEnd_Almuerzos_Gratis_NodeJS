@@ -56,5 +56,4 @@ function stopQueue(){
     clearTimeout(loopDelay)
 }
 
-
-module.exports = {runQueue, stopQueue}
+module.exports = { runQueue, stopQueue }
