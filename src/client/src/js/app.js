@@ -33,20 +33,25 @@ const menu = document.getElementById('menu');
 //   // window.location.href = 'ordenes-no-realizadas.html';
 // });
 
-// Función para cargar y mostrar los menús en el tablero
+//Show menus
 async function cargarMenus() {
   const data = await getFetch('http://localhost:3001/menus')
-   
-  const menuItems = data.map(menu => {
-    const li = document.createElement('li');
-    li.textContent = `${menu.code}. ${menu.name} - Tiempo de cocción: ${menu.cookingTime} minutos`;
-    return li;
-  });
-  
-  menuItems.forEach(item => {
-    menu.appendChild(item);
-  });
+
+  const ingredientsPairs = data.map((menu) => {
+    const ingredientsQty = Object.values(menu.ingredients)
+    const ingredientsNames = Object.keys(menu.ingredients)
+    return ingredientsNames.map((ingredient, index) => (`${ingredientsQty[index]} und de ${ingredient} `))
+  })
+
+  const menuItems = data.map((menu, index) => {
+    const li = document.createElement('li')
+    li.innerHTML = `<strong>${menu.code}. ${menu.name} </strong><br>- Tiempo de cocción: ${menu.cookingTime} minutos.</br> <br><i>Ingredientes:<i> ${ingredientsPairs[index]}.</br>`
+    return li
+  })
+
+  menuItems.forEach((item, index) => {
+    menu.appendChild(item)
+  })
 }
 
 cargarMenus()
-

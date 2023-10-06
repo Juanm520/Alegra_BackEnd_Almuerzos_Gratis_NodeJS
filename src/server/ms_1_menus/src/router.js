@@ -8,11 +8,13 @@ router.get('/', (req, res) => {
 })
 
 router.get('/menus', async (req, res) => {
+    res.setHeader('Content-Type','application/json')
     const data = await queries.allMenus()
     res.json(data)
 })
 
 router.get('/menu/:code', async (req, res) => {
+    res.setHeader('Content-Type','application/json')
     const code = req.params.code
     const data = await queries.menuByCode(code)
     res.json(data)
