@@ -4,7 +4,7 @@ export default async function getFetch(url){
         return response.json();
       })
       .catch(error => {
-        console.error('Error al obtener datos:', error);
+        console.error(error);
       });
 }
 
