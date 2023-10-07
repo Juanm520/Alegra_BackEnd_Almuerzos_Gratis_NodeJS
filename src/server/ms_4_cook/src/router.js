@@ -4,7 +4,7 @@ const { runQueue, stopQueue } = require('./lib/queue')
 
 router.get('/', (req, res) => {
     res.setHeader('Content-Type','text/plain')
-    res.send('Welcome to Kitcken End Point: /order_up: Make new order.')
+    res.send('Welcome to Kitcken End Point: /start_kitchen. /stop_kitchen')
 })
 
 router.post('/start_kitchen', (req, res) => {

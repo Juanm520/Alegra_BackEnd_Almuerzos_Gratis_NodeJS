@@ -46,14 +46,24 @@ button {
     background-color: #0f9989;
   }
 
-  h2 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 5vh;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: #07423b
-  }
+h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 5vh;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: #07423b
+}
+
+h4 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 5vh;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: #07423b
+}
+
   
   .menu {
     
@@ -70,5 +80,34 @@ button {
   .menu li {
     margin-bottom: 20px;
   }
+
+
+.table {
+  border-collapse: collapse;
+  width: 100%; 
+  margin: 20px auto; 
+}
+
+
+.table th {
+  background-color: #029987; 
+  padding: 10px; 
+  border: 1px solid #024d44; 
+  text-align: left;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+.table td {
+  padding: 10px; 
+  border: 1px solid #070101; 
+  text-align: left; 
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+.table tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
   
  
