@@ -2,8 +2,8 @@ import getFetch from "./getFetch.js"
 import { clearBoard } from "./clearBoard.js";
 
 //Show menu's table
-async function loadMenus(boardNode, title) {
-    const data = await getFetch('http://localhost:3001/menus')
+async function loadOrders(boardNode, title) {
+    const data = await getFetch('http://localhost:3002/orders')
     //clean board
     clearBoard(boardNode)
     //create title

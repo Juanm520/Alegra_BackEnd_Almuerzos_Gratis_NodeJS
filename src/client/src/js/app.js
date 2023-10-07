@@ -5,16 +5,15 @@ import { loadMenus } from "./loadMenusView.js"
 // const historialComprasBtn = document.getElementById('historialComprasBtn');
 // const ingredientesBtn = document.getElementById('ingredientesBtn');
 // const ordenesNoRealizadasBtn = document.getElementById('ordenesNoRealizadasBtn');
-const menuTable = document.getElementById('menu')
+const boardNode = document.querySelector('.board')
+const menuBtn = document.querySelector('#menuBtn')
 
-loadMenus(menuTable)
+loadMenus(boardNode, 'Menús disponibles')
 
-// // Evento para enviar órdenes variantes
-// enviarOrdenesBtn.addEventListener('click', () => {
-//   // Aquí puedes agregar la lógica para enviar órdenes
-//   // Puedes mostrar mensajes o realizar otras acciones
-//   alert('Órdenes variantes enviadas.');
-// });
+// Handle menu button
+menuBtn.addEventListener('click', () => {
+    loadMenus(boardNode, 'Menús disponibles')
+})
 
 // // Evento para ir al historial de compras
 // historialComprasBtn.addEventListener('click', () => {
