@@ -5,10 +5,11 @@ import { ordersView } from "./views/ordersView.js"
 
 // // Obtener referencias a los botones y al tablero
 // const enviarOrdenesBtn = document.getElementById('enviarOrdenesBtn');
+const infoNode = document.querySelector('.info')
+const boardNode = document.querySelector('.board')
 const ordershistoryBtn = document.getElementById('ordershistoryBtn')
 const foodstorageBtn = document.getElementById('foodstorageBtn')
 const activeOrdersBtn = document.getElementById('activeOrdersBtn')
-const boardNode = document.querySelector('.board')
 const menuBtn = document.querySelector('#menuBtn')
 
 menuView(boardNode, 'Menús disponibles')

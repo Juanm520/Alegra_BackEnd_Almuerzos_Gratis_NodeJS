@@ -64,6 +64,17 @@ h4 {
   color: #07423b
 }
 
+.smallbutton {
+  background-color: #00b19d;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 10px;
+}
+
+  .smallbutton:hover {
+    background-color: #0f9989;
+  }
   
   .menu {
     
