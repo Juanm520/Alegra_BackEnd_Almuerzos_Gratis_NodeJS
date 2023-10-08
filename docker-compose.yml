@@ -61,19 +61,4 @@ services:
       - ms_update_food_storage
       ports:
         - 3004:3004
-  client:
-      container_name: client
-      build: ./src/client
-      depends_on:
-      - ms_menus
-      - ms_orders
-      - ms_update_food_storage
-      - ms_cook
-      links:
-      - ms_menus
-      - ms_orders
-      - ms_update_food_storage
-      - ms_cook
-      ports:
-        - 3000:3000
-     
+

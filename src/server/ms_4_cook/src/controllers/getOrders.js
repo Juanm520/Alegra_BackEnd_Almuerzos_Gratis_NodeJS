@@ -18,9 +18,13 @@ async function getOrders(){
 
 //Get the list of the active orders (no delivered)
 async function activeOrders(){
-    const orders = await getOrders().catch(err => console.log(err))
-    const activeOrders = orders.filter(order => !order.delivered )
-    return activeOrders
+    try {
+        const orders = await getOrders()
+        const activeOrders = orders.filter(order => !order.delivered )
+        return activeOrders
+    } catch (err) {
+        return err
+    }
 }
 
 module.exports = { getOrders, activeOrders }

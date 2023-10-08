@@ -6,7 +6,7 @@ async function setupTable(boardNode, data, emptyDataMsg, title) {
 
     //Id data is empty return title
     if(data.length === 0){
-      const noDataNode = document.createElement('h4')
+      const noDataNode = document.createElement('h5')
       noDataNode.innerText = emptyDataMsg
       return boardNode.appendChild(noDataNode)
     }

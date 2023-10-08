@@ -3,7 +3,7 @@ import { setupBoard } from "../lib/setupBoard.js";
 
 //Show menu's table
 async function menuView(boardNode, title) {
-    const data = await getFetch('http://ms_menus:3001/menus')
+    const data = await getFetch('http://localhost:3001/menus')
     //clean board
     setupBoard(boardNode, title)
     //Create ol to append li

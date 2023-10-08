@@ -22,9 +22,14 @@ const orderQueue = new Queue()
 
 //Add the orders to the queue
 async function enqueueOrders(){
-    const undeliveredOrders = await activeOrders()
-    const mappingOrderQueue = undeliveredOrders.map(order => orderQueue.enqueue(() => processOrder(order)))
-    return `${mappingOrderQueue.length} pendient orders.`
+    try {
+        const undeliveredOrders = await activeOrders()
+        const mappingOrderQueue = undeliveredOrders.map(order => orderQueue.enqueue(() => processOrder(order)))
+        return `${mappingOrderQueue.length} pendient orders.`
+    } catch (error) {
+        return `0 pendient orders.`
+    }
+    
 }
 
 //Process each order in the queue

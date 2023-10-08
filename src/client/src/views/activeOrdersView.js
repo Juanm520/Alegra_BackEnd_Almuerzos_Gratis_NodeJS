@@ -4,7 +4,7 @@ import { setupTable } from "../lib/setupTable.js"
 
 //Show menu's table
 async function activeOrdersView(boardNode, title) {
-    const data = await getFetch('http://ms_orders:3002/orders')
+    const data = await getFetch('http://localhost:3002/orders')
       .then(data => data.filter(order => !order.delivered))
 
     title += `: ${data.length}`
