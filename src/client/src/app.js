@@ -18,7 +18,7 @@ const infoKitchen = document.querySelector('.infokitchen')
 const stopBtn = document.querySelector('#stopBtn')
 
 menuView(boardNode, 'Menús disponibles')
-// startKitchen()
+startKitchen()
 
 //Handle submit button
 submitBtn.addEventListener('click', () => {
