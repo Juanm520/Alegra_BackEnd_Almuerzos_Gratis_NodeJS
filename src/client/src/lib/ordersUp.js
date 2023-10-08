@@ -11,7 +11,7 @@ async function addOrders(qty, infoNode, buttonNode, qtySelector){
 
   //If there is only one order
   if(qty < 2){
-    const data = await postFetch('http://localhost:3002/new_order', {})
+    const data = await postFetch('http://ms_orders:3002/new_order', {})
     info.innerText = `Orden agregada a la cola con el id ${data._id}.`
     //Final frontend operations
     buttonNode.removeAttribute('disabled')
@@ -22,7 +22,7 @@ async function addOrders(qty, infoNode, buttonNode, qtySelector){
   }
   //If there are more than one order
   for (let order = 0; order < qty; order++) {
-    await postFetch('http://localhost:3002/new_order', {})
+    await postFetch('http://ms_orders:3002/new_order', {})
   }
   info.innerText = `${qty} ordenes agregadas a la cola.`
 

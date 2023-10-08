@@ -4,7 +4,7 @@ import { purchaseHistoryView } from "./purchaseHistory.js"
 
 //Show menu's table
 async function foodStorageView(boardNode, title) {
-    const data = await getFetch('http://localhost:3003/ingredients_info')
+    const data = await getFetch('http://ms_update_food_storage:3003/ingredients_info')
         .then(data => data.ingredients_info)
     //Table of storage    
     setupTable(boardNode, data, '',title)
