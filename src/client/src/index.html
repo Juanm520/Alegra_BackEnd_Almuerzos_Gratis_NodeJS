@@ -10,9 +10,13 @@
 
 <form class="orders">
     <label for="numberqty">Ingrese el numero de almuerzos a solicitar:</label>
-    <input type="number" id="numberqty" name="numberqty">
-    <button type="submit" id="enviarOrdenesBtn">Solicitar</button>
+    <input type="number" id="qty" name="numberqty" value="1">
+    <button type="button" id="submit">Enviar</button>
 </form>
+
+<section class="info">
+    <h5>Estado del envio: </h5>
+</section>
 
 <section class="links" >
     <button id="activeOrdersBtn">Ver Ordenes pendientes</button>
@@ -25,13 +29,10 @@
     <h2> Menús disponibles </h2>
 </section>
 
-<section class="kitchen">
-    <button class="smallbutton">Iniciar cocina</button>
-    <button class="smallbutton">Parar cocina</button>
-</section>
+<h5 class="infokitchen">La cocina esta lista, preparando ordenes pendientes...</h5>
 
-<section class="info">
-
+<section class="kitchenhandler">
+    <button class="smallbutton" id="stopBtn">Parar cocina</button>
 </section>
   
 <script type="module" src="./app.js"></script>

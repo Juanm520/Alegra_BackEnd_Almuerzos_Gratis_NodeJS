@@ -46,6 +46,14 @@ button {
     background-color: #0f9989;
   }
 
+  button:disabled {
+    background-color: #ccc; /* Color de fondo gris */
+    color: #888; /* Color de texto gris */
+    cursor: not-allowed; /* Cursor no permitido */
+    border: 1px solid #ccc; /* Borde gris */
+    opacity: 0.6; /* Opacidad reducida para indicar que está deshabilitado */
+  }
+
 h2 {
   display: flex;
   justify-content: center;
@@ -55,11 +63,10 @@ h2 {
   color: #07423b
 }
 
-h4 {
+h5 {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 5vh;
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   color: #07423b
 }
@@ -76,7 +83,7 @@ h4 {
     background-color: #0f9989;
   }
   
-  .menu {
+.menu {
     
     background-color: #f5f5f5;
     padding: 20px;
@@ -86,7 +93,7 @@ h4 {
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-weight: 100;
     list-style: none;
-  }
+}
   
   .menu li {
     margin-bottom: 20px;
@@ -100,25 +107,36 @@ h4 {
 }
 
 
-.table th {
-  background-color: #029987; 
-  padding: 10px; 
-  border: 1px solid #024d44; 
-  text-align: left;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  .table th {
+    background-color: #029987; 
+    padding: 10px; 
+    border: 1px solid #024d44; 
+    text-align: left;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+
+
+  .table td {
+    padding: 10px; 
+    border: 1px solid #070101; 
+    text-align: left; 
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+
+
+  .table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+
+.info, .infokitchen {
+  display: flex;
+  justify-content: start;
+  padding-left: 3vh;
+  height: 5vh;
 }
-
-
-.table td {
-  padding: 10px; 
-  border: 1px solid #070101; 
-  text-align: left; 
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
-
-
-.table tbody tr:nth-child(even) {
-  background-color: #f2f2f2;
-}
+  .infobanner, .kitchenhandler {
+    padding-left: 2vh;
+  }
+  
   
  
