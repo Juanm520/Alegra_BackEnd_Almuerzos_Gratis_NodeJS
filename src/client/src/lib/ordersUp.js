@@ -1,6 +1,6 @@
 import postFetch from "./postFetch.js"
 
-const host = process.env.HOST
+const host = '34.125.139.171'
 
 async function addOrders(qty, infoNode, buttonNode, qtySelector){
   //To append info and add classes

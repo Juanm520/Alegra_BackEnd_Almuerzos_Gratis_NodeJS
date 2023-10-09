@@ -1,6 +1,6 @@
 import postFetch from "./postFetch.js";
 
-const host = process.env.HOST
+const host = '34.125.139.171'
 export async function stopKitchen(infoKitchen, stopBtn, submintBtn){
     await postFetch(`http://${host}:3004/stop_kitchen`, {})
     submintBtn.setAttribute('disabled', '')

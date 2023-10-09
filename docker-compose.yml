@@ -66,9 +66,5 @@ services:
       build: ./src/client
       ports:
         - 3000:3000
-      env_file:
-        - ./.env
-      environment:
-        - HOST=$HOST
   
 
