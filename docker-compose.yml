@@ -61,4 +61,14 @@ services:
       - ms_update_food_storage
       ports:
         - 3004:3004
+  client:
+      container_name: client
+      build: ./src/client
+      ports:
+        - 3000:3000
+      env_file:
+        - ./.env
+      environment:
+        - HOST=$HOST
+  
 
