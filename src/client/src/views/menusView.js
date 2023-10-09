@@ -1,9 +1,10 @@
 import getFetch from "../lib/getFetch.js"
 import { setupBoard } from "../lib/setupBoard.js";
 
+const host = process.env.HOST
 //Show menu's table
 async function menuView(boardNode, title) {
-    const data = await getFetch('http://localhost:3001/menus')
+    const data = await getFetch(`http://${host}:3001/menus`)
     //clean board
     setupBoard(boardNode, title)
     //Create ol to append li

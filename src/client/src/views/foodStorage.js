@@ -2,9 +2,10 @@ import getFetch from "../lib/getFetch.js"
 import { setupTable } from "../lib/setupTable.js"
 import { purchaseHistoryView } from "./purchaseHistory.js"
 
+const host = process.env.HOST
 //Show menu's table
 async function foodStorageView(boardNode, title) {
-    const data = await getFetch('http://localhost:3003/ingredients_info')
+    const data = await getFetch(`http://${host}:3003/ingredients_info`)
         .then(data => data.ingredients_info)
     //Table of storage    
     setupTable(boardNode, data, '',title)
